@@ -31,6 +31,7 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_toast = subscribe(toast, (value) => $toast = value);
   $$unsubscribe_loginSession = subscribe(loginSession, (value) => $loginSession = value);
   let { data } = $$props;
+  const prerender = true;
   const { user } = data;
   set_store_value(loginSession, $loginSession = user, $loginSession);
   let Toast;
@@ -50,6 +51,8 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   };
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
+  if ($$props.prerender === void 0 && $$bindings.prerender && prerender !== void 0)
+    $$bindings.prerender(prerender);
   $$result.css.add(css);
   {
     openToast($toast.isOpen);
@@ -81,4 +84,4 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 
 export { Layout as default };
-//# sourceMappingURL=_layout.svelte-61f145a5.js.map
+//# sourceMappingURL=_layout.svelte-0e83f170.js.map
