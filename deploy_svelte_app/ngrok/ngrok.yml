@@ -1,0 +1,9 @@
+authtoken: "2RB0ZPfBqkeB6stvYqKncVBAKoo_7VsP5u4raohZBcdxWrDWa"
+tunnels:
+  qa_bot:
+    proto: http
+    addr: 192.168.70.33:3000
+    host_header: rewrite
+#    basic_auth:
+#      - user:123edsaqw
+version: "2"

@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  svelte_auth_ex_postgres:
+    image: postgres:15.0
+    container_name: svelte_auth_ex_postgres
+    hostname: svelte_auth_ex_postgres
+    environment:
+      TZ: 'GMT+8'
+      PGTZ: 'GMT+8'
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: NYWjusyncFbUCkq6
+    volumes:
+      # - ./data/db:/var/lib/postgresql/data
+      - auth_ex_pql_volume:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
+    networks:
+      - auth_ex_network
+
+  svelte_auth_ex_ngrok:
+    image: ngrok/ngrok:3
+    container_name: svelte_auth_ex_ngrok
+    hostname: svelte_auth_ex_ngrok
+    restart: unless-stopped
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    volumes:
+      - ./ngrok/ngrok.yml:/etc/ngrok.yml
+    ports:
+      - "4041:4040"
+    networks:
+      - auth_ex_network
+
+networks:
+  auth_ex_network:
+    external: false
+    name: liteon_svelte_auth_net
+
+volumes:
+  auth_ex_pql_volume:

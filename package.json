@@ -1,0 +1,73 @@
+{
+  "name": "sveltekit-auth-example",
+  "homepage": "https://hiyif.github.io/svelte_auth_ex",
+  "description": "SvelteKit Authentication Example",
+  "version": "1.0.52",
+  "private": false,
+  "author": "Yifan Chen",
+  "license": "https://github.com/hiyif/svelte_auth_ex/blob/master/LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiyif/svelte_auth_ex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hiyif/svelte_auth_ex/issues"
+  },
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "authentication",
+    "example",
+    "google",
+    "postgresql"
+  ],
+  "scripts": {
+    "start": "node build",
+    "dev": "vite dev",
+    "build": "vite build",
+    "package": "svelte-kit package",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "deploy": "npm run build && npx gh-pages -d build -t true"
+  },
+  "engines": {
+    "node": "^18.16.0",
+    "npm": "^9.5.1"
+  },
+  "type": "module",
+  "dependencies": {
+    "@beyowi/svelte-recaptcha-v2": "^0.0.4",
+    "@sendgrid/mail": "^7.7.0",
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^1.2.4",
+    "@sveltejs/kit": "^1.15.10",
+    "@types/bootstrap": "5.2.6",
+    "@types/google.accounts": "^0.0.7",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/pg": "^8.6.6",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "bootstrap": "^5.2.3",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "gh-pages": "^5.0.0",
+    "google-auth-library": "^8.8.0",
+    "jsonwebtoken": "^9.0.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-svelte": "^2.10.0",
+    "sass": "^1.62.1",
+    "svelte": "^3.58.0",
+    "svelte-check": "^3.2.0",
+    "svelte-recaptcha-v2": "^0.0.2",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.4",
+    "vitest": "^0.30.1"
+  }
+}
